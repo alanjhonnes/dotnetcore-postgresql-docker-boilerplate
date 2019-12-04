@@ -5,10 +5,10 @@ USER root
 RUN wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
         && dpkg -i packages-microsoft-prod.deb \
         && apt-get update && apt-get install -y \
-        && apt-get install apt-transport-https \
+        && apt-get install -y apt-transport-https \
         && apt-get update \
-        && apt-get install aspnetcore-runtime-3.0 \
-        && apt-get install dotnet-runtime-3.0 \
+        && apt-get install -y aspnetcore-runtime-3.0 \
+        && apt-get install -y dotnet-runtime-3.0 \
         && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 USER gitpod
